@@ -6,7 +6,7 @@ import { Loading } from '@components/Loading'
 
 import theme from './src/theme';
 
-import { Teams } from '@screens/Teams';
+import { NewTeam } from '@screens/NewTeam';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
@@ -18,7 +18,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Teams /> : <Loading />}
+      {fontsLoaded ? <NewTeam /> : <Loading />}
     </ThemeProvider>
 
   );
