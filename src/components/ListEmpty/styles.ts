@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
-import  SmileySad   from 'phosphor-react-native/src/icons/SmileySad';
+import styled, { css } from "styled-components/native";
+import SmileySad from 'phosphor-react-native/src/icons/SmileySad';
 
 export const Container = styled.View`
     flex: 1;
@@ -12,9 +12,11 @@ export const Message = styled.Text`
     margin-top: 10px;
     margin-bottom: 100px;
 
+    ${({ theme }) => css`
     font-size: ${({ theme }) => theme.FONT_SIZE.SM}px;
-    font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR };
+    font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
     color: ${({ theme }) => theme.COLORS.GRAY_300};
+    `};
 `;
 
 export const EmptyIcon = styled(SmileySad).attrs(({ theme }) => ({
