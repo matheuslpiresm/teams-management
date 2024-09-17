@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { Container } from './styles';
 
@@ -12,6 +13,12 @@ import { Button } from '@components/Button';
 
 export function Teams() {
   const [teams, setTeams] = useState<string[]>(['Equipe Syncorp', 'Equipe Sbcert']);
+
+  const navigation = useNavigation();
+
+  function handleNewGroup() {
+    navigation.navigate('newGroup')
+  }
 
   return (
     <Container>
@@ -38,8 +45,9 @@ export function Teams() {
         showsVerticalScrollIndicator={false}
       />
 
-      <Button 
+      <Button
         title="Criar nova equipe"
+        onPress={handleNewGroup}
       />
     </Container>
   );
