@@ -11,15 +11,15 @@ type Props = {
 export function Header({ showBackButton = false }: Props) {
     const navigation = useNavigation();
 
-    function handleGoTeams(){
-        navigation.navigate('teams');
+    function handleGoGroups(){
+        navigation.navigate('groups');
     }
 
     return (
         <Container>
             {
             showBackButton &&
-            <BackButton onPress={handleGoTeams}>
+            <BackButton onPress={handleGoGroups}>
                 <BackIcon />
             </BackButton>
             }

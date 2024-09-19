@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { Teams } from '@screens/Teams'
+import { Groups } from '@screens/Groups'
 import { NewGroup } from '@screens/NewGroup'
 import { Players } from '@screens/Players'
 
@@ -10,8 +10,8 @@ export function AppRoutes() {
     return (
         <Navigator screenOptions={{headerShown: false}}>
             <Screen
-                name="teams"
-                component={Teams}
+                name="groups"
+                component={Groups}
             />
 
             <Screen

@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Container, Content, Icon } from './styles';
+import { AppError } from '@utils/AppError';
+import { Alert } from 'react-native';
 
+import { groupCreate } from '@storage/group/groupCreate';
 import { useNavigation } from '@react-navigation/native';
 
 import { Header } from '@components/Header';
@@ -13,8 +16,23 @@ export function NewGroup() {
 
     const navigation = useNavigation();
 
-    function handleAddPlayers() {
-        navigation.navigate('players', { group })
+    async function handleAddPlayers() {
+        try {
+            if (group.trim().length == 0) {
+                return Alert.alert('Novo Grupo', 'Digite o nome da equipe');
+            }
+
+            await groupCreate(group)
+            navigation.navigate('players', { group });
+
+        } catch (error) {
+            if (error instanceof AppError) {
+                Alert.alert('Novo Grupo', error.message);
+            } else {
+                Alert.alert('Novo Grupo', 'Não foi possível criar uma nova equipe');
+                console.log(error);
+            }
+        }
     }
 
     return (
@@ -22,6 +40,7 @@ export function NewGroup() {
             <Header showBackButton />
             <Content>
                 <Icon />
+
                 <Highlight
                     title="Nova Equipe"
                     subtitle="Crie uma nova equipe para jogar com você"

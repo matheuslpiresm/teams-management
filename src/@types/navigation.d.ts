@@ -1,7 +1,7 @@
 export declare global {
     namespace ReactNavigation {
         interface RootParamList {
-            teams: undefined;
+            groups: undefined;
             newGroup: undefined;
             players: {
                 group: string;
