@@ -1,4 +1,5 @@
 import { Container, Icon, Name } from './styles';
+
 import { ButtonIcon } from '@components/ButtonIcon';
 
 type Props = {

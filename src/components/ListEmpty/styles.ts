@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components/native";
+
 import SmileySad from 'phosphor-react-native/src/icons/SmileySad';
 
 export const Container = styled.View`

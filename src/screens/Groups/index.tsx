@@ -1,17 +1,19 @@
 import { useState, useCallback, useEffect } from 'react';
+
 import { FlatList } from 'react-native';
+
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 
-import { groupsGetAll } from '@storage/group/groupsGetAll';
 import { Container } from './styles';
 
-import { Header } from '@components/Header'
+import { Header } from '@components/Header';
 import { Highlight } from '@components/Highlight';
 import { GroupCard } from '@components/GroupCard';
 import { ListEmpty } from '@components/ListEmpty';
 import { Button } from '@components/Button';
 import { Loading } from '@components/Loading';
 
+import { groupsGetAll } from '@storage/group/groupsGetAll';
 
 export function Groups() {
   const [isLoading, setIsLoading] = useState(true);
@@ -55,23 +57,23 @@ export function Groups() {
       />
       {
         isLoading ? <Loading /> :
-<FlatList
-  data={groups}
-  keyExtractor={item => item}
-  renderItem={({ item }) => (
-    <GroupCard
-      title={item}
-      onPress={() => handleOpenGroup(item)}
-      style={{ marginRight: 8, marginBottom: 7 }} // Adicione um estilo para espaçamento
-    />
-  )}
-  ListEmptyComponent={() => (
-    <ListEmpty message="Que pena, ainda não existem equipes cadastradas!" />
-  )}
-  showsVerticalScrollIndicator={false}
-  numColumns={2} // Ajuste o número de colunas conforme desejado
-  contentContainerStyle={groups.length === 0 ? { flex: 1 } : { padding: 10 }} // Padding opcional para espaçamento
-/>
+          <FlatList
+            data={groups}
+            keyExtractor={item => item}
+            renderItem={({ item }) => (
+              <GroupCard
+                title={item}
+                onPress={() => handleOpenGroup(item)}
+                style={{ marginRight: 8, marginBottom: 7 }}
+              />
+            )}
+            ListEmptyComponent={() => (
+              <ListEmpty message="Que pena, ainda não existem equipes cadastradas!" />
+            )}
+            showsVerticalScrollIndicator={false}
+            numColumns={2}
+            contentContainerStyle={groups.length === 0 ? { flex: 1 } : { padding: 10 }}
+          />
 
       }
 

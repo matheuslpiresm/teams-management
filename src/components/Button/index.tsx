@@ -12,7 +12,7 @@ export function Button({ title, type = 'PRIMARY', ...rest }: Props) {
         <Container
             type={type}
             {...rest}>
- 
+
             <Title>
                 {title}
             </Title>

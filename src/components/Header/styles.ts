@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import  ArrowLeft   from 'phosphor-react-native/src/icons/ArrowLeft';
+import ArrowLeft from 'phosphor-react-native/src/icons/ArrowLeft';
 
 
 export const Container = styled.View`

@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
+
 import { Alert, FlatList, TextInput } from 'react-native';
+
 import { useRoute, useNavigation } from '@react-navigation/native';
 
 import { Container, Form, HeaderList, NumberOfPlayers } from './styles';
@@ -12,6 +14,8 @@ import { Filter } from '@components/Filter';
 import { PlayerCard } from '@components/PlayerCard';
 import { ListEmpty } from '@components/ListEmpty';
 import { Button } from '@components/Button';
+import { Loading } from '@components/Loading';
+
 import { AppError } from '@utils/AppError';
 
 import { playerAddByGroup } from '@storage/player/playerAddByGroup';
@@ -19,7 +23,6 @@ import { playersGetByGroupAndTeam } from '@storage/player/playersGetByGroupAndTe
 import { PlayerStorageDTO } from '@storage/player/PlayerStorageDTO';
 import { playerRemoveByGroup } from '@storage/player/playerRemoveByGroup';
 import { groupRemoveByName } from '@storage/group/groupRemoveByName';
-import { Loading } from '@components/Loading';
 
 type RouteParams = {
     group: string;
@@ -75,7 +78,7 @@ export function Players() {
             Alert.alert('Participantes', 'Não foi possível carregar os participantes da equipe selecionada.')
         } finally {
             setIsLoading(false);
-          }
+        }
     }
 
     async function handleRemovePlayer(playerName: string) {
