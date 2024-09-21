@@ -13,7 +13,7 @@ export async function playerAddByGroup(newPlayer: PlayerStorageDTO, group: strin
         const playersAlreadyExists = storedPlayers.filter(player => player.name === newPlayer.name);
         
         if (playersAlreadyExists.length > 0) {
-            throw new AppError('Essa pessoa já está adicionada em uma equipe!');
+            throw new AppError('Esse participante já foi adicionado em uma equipe!');
         }
 
         const storage = JSON.stringify([...storedPlayers, newPlayer]);

@@ -40,7 +40,7 @@ export function Players() {
     async function handleAddPlayer() {
 
         if (newPlayerName.trim().length === 0) {
-            return Alert.alert('Nova pessoa', 'Digite o nome da pessoa para adiciona-la!')
+            return Alert.alert('Novo participante', 'Digite o nome do participante para adiciona-lo!')
         }
 
         const newPlayer = {
@@ -57,10 +57,10 @@ export function Players() {
 
         } catch (error) {
             if (error instanceof AppError) {
-                Alert.alert('Nova pessoa', error.message);
+                Alert.alert('Novo participante', error.message);
             } else {
                 console.log(error);
-                Alert.alert('Nova pessoa', 'Não foi possível adicionar a pessoa!');
+                Alert.alert('Novo participante', 'Não foi possível adicionar o participante.');
             }
         }
     }
@@ -72,7 +72,7 @@ export function Players() {
             setPlayers(playersByTeam);
         } catch (error) {
             console.log(error);
-            Alert.alert('Pessoas', 'Não foi possível carregar as pessoas da equipe selecionada!')
+            Alert.alert('Participantes', 'Não foi possível carregar os participantes da equipe selecionada.')
         } finally {
             setIsLoading(false);
           }
@@ -86,7 +86,7 @@ export function Players() {
 
         } catch (error) {
             console.log(error);
-            Alert.alert('Remover Pessoa', 'Não foi possível remover essa pessoa.')
+            Alert.alert('Remover Participante', 'Não foi possível remover esse participante.')
         }
     }
 
@@ -96,14 +96,14 @@ export function Players() {
             navigation.navigate('groups');
         } catch (error) {
             console.log(error);
-            Alert.alert('Remover Grupo', 'Não foi possível remover essa equipe.')
+            Alert.alert('Remover Equipe', 'Não foi possível remover essa equipe.')
         }
     }
 
     async function handleRemoveGroup() {
         Alert.alert(
             'Remover',
-            'Deseja remover o grupo?',
+            'Deseja remover a equipe?',
             [
                 { text: 'Não', style: 'cancel' },
                 { text: 'Sim', onPress: () => groupRemove() }
@@ -128,7 +128,7 @@ export function Players() {
             <Form>
                 <Input
                     inputRef={newPlayerNameInputRef}
-                    placeholder='Nome da pessoa'
+                    placeholder='Nome do participante'
                     autoCorrect={false}
                     onChangeText={setNewPlayerName}
                     value={newPlayerName}
@@ -175,7 +175,7 @@ export function Players() {
                         )}
                         ListEmptyComponent={() => (
                             <ListEmpty
-                                message="Não há pessoas nessa equipe"
+                                message="Não há participantes nessa equipe"
                             />
                         )}
                         showsVerticalScrollIndicator={false}

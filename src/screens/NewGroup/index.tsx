@@ -19,7 +19,7 @@ export function NewGroup() {
     async function handleAddPlayers() {
         try {
             if (group.trim().length == 0) {
-                return Alert.alert('Novo Grupo', 'Digite o nome da equipe');
+                return Alert.alert('Nova Equipe', 'Digite o nome da equipe');
             }
 
             await groupCreate(group)
@@ -27,9 +27,9 @@ export function NewGroup() {
 
         } catch (error) {
             if (error instanceof AppError) {
-                Alert.alert('Novo Grupo', error.message);
+                Alert.alert('Nova Equipe', error.message);
             } else {
-                Alert.alert('Novo Grupo', 'Não foi possível criar uma nova equipe');
+                Alert.alert('Nova Equipe', 'Não foi possível criar uma nova equipe');
                 console.log(error);
             }
         }

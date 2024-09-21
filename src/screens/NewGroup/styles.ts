@@ -17,7 +17,7 @@ export const Content = styled.View`
 
 export const Icon = styled(UsersThree).attrs(({theme}) => ({
     size: 56,
-    color: theme.COLORS.GREEN_700,
+    color: theme.COLORS.BLUE_500,
 }))`
     align-self: center;
 `;

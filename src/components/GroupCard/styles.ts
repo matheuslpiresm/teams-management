@@ -3,8 +3,8 @@ import { TouchableOpacity } from "react-native";
 import UsersThree from 'phosphor-react-native/src/icons/UsersThree'
 
 export const Container = styled(TouchableOpacity)`
-    width: 100%;
-    height: 90px;
+    width: 49%;
+    height: 145px;
 
     background-color: ${({ theme }) => theme.COLORS.GRAY_500};
     border-radius: 6px;
@@ -16,6 +16,12 @@ export const Container = styled(TouchableOpacity)`
     margin-bottom: 12px;
 `;
 
+export const Content = styled.View`
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export const Title = styled.Text`
     ${({ theme }) => css`
         font-size: ${theme.FONT_SIZE.MD}px;
@@ -25,9 +31,9 @@ export const Title = styled.Text`
 `;
 
 export const Icon = styled(UsersThree).attrs(({ theme }) => ({
-    size: 32,
-    color: theme.COLORS.GREEN_700,
+    size: 38,
+    color: theme.COLORS.BLUE_500,
     weight: 'fill'
 }))`
-    margin-right: 20px;
+    margin-bottom: 15px;
 `;

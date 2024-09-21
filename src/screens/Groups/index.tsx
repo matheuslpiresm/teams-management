@@ -55,23 +55,24 @@ export function Groups() {
       />
       {
         isLoading ? <Loading /> :
-          <FlatList
-            data={groups}
-            keyExtractor={item => item}
-            renderItem={({ item }) => (
-              <GroupCard
-                title={item}
-                onPress={() => handleOpenGroup(item)}
-              />
-            )}
-            contentContainerStyle={groups.length === 0 && { flex: 1 }}
-            ListEmptyComponent={() => (
-              <ListEmpty
-                message="Que pena, ainda não existem equipes cadastradas!"
-              />
-            )}
-            showsVerticalScrollIndicator={false}
-          />
+<FlatList
+  data={groups}
+  keyExtractor={item => item}
+  renderItem={({ item }) => (
+    <GroupCard
+      title={item}
+      onPress={() => handleOpenGroup(item)}
+      style={{ marginRight: 8, marginBottom: 7 }} // Adicione um estilo para espaçamento
+    />
+  )}
+  ListEmptyComponent={() => (
+    <ListEmpty message="Que pena, ainda não existem equipes cadastradas!" />
+  )}
+  showsVerticalScrollIndicator={false}
+  numColumns={2} // Ajuste o número de colunas conforme desejado
+  contentContainerStyle={groups.length === 0 ? { flex: 1 } : { padding: 10 }} // Padding opcional para espaçamento
+/>
+
       }
 
       <Button
