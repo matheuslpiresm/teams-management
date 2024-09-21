@@ -1,5 +1,4 @@
 # Teams Management - React Native
-
 Este projeto é uma aplicação de controle de equipes desenvolvida com React Native que foi desenvolvida junto ao módulo Interfaces, Navegação e Armazenamento local da formação React Native da Rocketseat.
 
 ## Funcionalidades
@@ -19,4 +18,4 @@ A aplicação possui as seguintes funcionalidades:
 
 ## Screenshots do App
 
-![Screenshots das interações dentro do aplicativo](./assets/screenshoot.png)
+![Screenshots das interações dentro do aplicativo](./assets/screenshot.png)
