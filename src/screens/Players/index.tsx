@@ -61,6 +61,8 @@ export function Players() {
         } catch (error) {
             if (error instanceof AppError) {
                 Alert.alert('Novo participante', error.message);
+                setNewPlayerName('');
+
             } else {
                 console.log(error);
                 Alert.alert('Novo participante', 'Não foi possível adicionar o participante.');
