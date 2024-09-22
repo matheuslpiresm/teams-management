@@ -180,7 +180,7 @@ export function Players() {
                         )}
                         ListEmptyComponent={() => (
                             <ListEmpty
-                                message="Não há participantes nessa equipe"
+                                message="Não há participantes nesse time"
                             />
                         )}
                         showsVerticalScrollIndicator={false}
@@ -188,7 +188,6 @@ export function Players() {
                             { paddingBottom: 100 }, players.length === 0 && { flex: 1 }]}
                     />
             }
-
 
             <Button
                 title='Remover Equipe'
